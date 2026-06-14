@@ -13,7 +13,7 @@ class Player{
         Player(string id, int money);
         ~Player();
         void work();
-        void care_for_pou();
+        virtual void care_for_pou();
         void gamble();
 };
 
