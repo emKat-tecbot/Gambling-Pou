@@ -32,22 +32,22 @@ class Stats {
         // setters
         void setHappy(int amount){
             if (happy <= 0)
-                throw Pouxception("Your pou got depressed!\n Better luck next time\n...");
+                throw Pouxception("Your pou got depressed!\n");
             happy = barrier(happy + amount);
         };
         void setHunger(int amount){
             if (hunger >= 100)
-                throw Pouxception("Your pou starved!\n better luck next time\n...");
+                throw Pouxception("Your pou starving!\n");
             hunger = barrier(hunger + amount);
         };
         void setEnergy(int amount){
             if (energy <= 0)
-                throw Pouxception("Your pou is asleep........Forever!\n Better luck next time\n...");
+                throw Pouxception("Your pou is veeery tired!\n");
             energy = barrier(energy + amount);
         };
         void setHygiene(int amount){
             if (hygiene <= 0)
-                throw Pouxception("Your pou died of dysentery!\n Better luck next time\n...");
+                throw Pouxception("Your pou is stinky\n");
             hygiene = barrier(hygiene + amount);
         };
         void setAddiction(int amount){
@@ -67,5 +67,4 @@ class Stats {
             else
                 mood = "HAPPY";
         };
-        void update(); // updates stats every certain amount of time
 };
