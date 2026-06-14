@@ -8,10 +8,11 @@
 
 class Slot_Machine : public Minigame {
 private:
+    string name;
     std::vector<std::string> symbols;
 
 public:
-    Slot_Machine():symbols({"🜼","⟡","<3","✮","₍^. .^₎⟆"}){srand(time(0));};
+    Slot_Machine():name("Slot Machine"), symbols({"🜼","⟡","<3","✮","₍^. .^₎⟆"}){srand(time(0));};
     string spin(){return symbols[rand()% symbols.size()];}; // spin 3 times for the 3 simbols
     int play(int bet) override {
         string spin1 = spin();
@@ -30,4 +31,5 @@ public:
     void Rules() override{
         cout << "SLOR MACHINE RULES\n 1.Three matching symbols = 5x your bet\n 2.Three diamonds = 10x your bet\n 3.No match = lose your bet\n Symbols: 🜼 ⟡ <3 ✮ ₍^. .^₎⟆\n";
     };
+    string getName(){return name;};
 };
