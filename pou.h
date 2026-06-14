@@ -13,15 +13,16 @@ class Pou{
     public:
         bool can_work(); // returns false if addiction_level is high 
         // update stats but delegate that to the stats class
-        int update_happy(int amount);
-        int update_hunger(int amount);
-        int update_energy(int amount);
-        int update_hygiene(int amount);
-        int update_addiction(int amount);
-
-        // getters
+        void update_happy(int amount);
+        void update_hunger(int amount);
+        void update_energy(int amount);
+        void update_addiction(int amount);
+        // getter
         string getName();
-        
+        // checkers (each round game checks if player lost or won)
+        bool isDead(); // checks if pou is dead
+        bool Won(); // checks if player won the game
+
 
 };
 
