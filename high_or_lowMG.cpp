@@ -2,13 +2,14 @@
 #include "Pouxception.h"
 #include <iostream>
 #include <cstdlib> // random numbers
-#include <ctime>
+#include <ctime> // get a different number each time
 
 class High_or_Low : public Minigame{
     private:
         int number; 
     public:
         High_or_Low(){
+            srand(time(0));
             number = rand() % 100 + 1; // random number between 1 and 100
         };
         bool play(int bet) override{
