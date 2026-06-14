@@ -22,8 +22,7 @@ class Pou{
         // checkers (each round game checks if player lost or won)
         bool isDead(); // checks if pou is dead
         bool Won(); // checks if player won the game
-
-
+        void setName(string newname){};
 };
 
 #endif //POU_H

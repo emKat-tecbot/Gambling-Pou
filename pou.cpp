@@ -35,4 +35,5 @@ class Pou{
         bool Won(){
             return (stats.getHappy() >= 100 && stats.getHunger() <= 0 && stats.getEnergy() >= 100);
         };
+        void setName(string newname){name = newname;};
 };
