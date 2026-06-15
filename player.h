@@ -11,7 +11,6 @@ class Player{
         Pou* pou; // Pou determines whether player works and player must take care of pou
     public:
         Player(string id, int money, Pou* pou);
-        ~Player();
         void work();
         virtual void care_for_pou();
         void gamble();

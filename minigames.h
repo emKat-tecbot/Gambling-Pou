@@ -11,6 +11,6 @@ class Minigame{
         virtual ~Minigame(){}; // virtual destructor to ensure proper cleanup of derived classes
         virtual void Rules()=0;
         //getter
-        std::string getName();
+        std::string getName() const { return name; };
 };
 #endif // MINIGAME_H

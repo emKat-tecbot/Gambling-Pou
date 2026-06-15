@@ -1,7 +1,7 @@
-#include <iostream>
+﻿#include "game_rounds.h"
 
 int main() {
-    std::cout << "Pou game starting...\n";
+    GameRound game;
+    game.start();
     return 0;
 }
-
