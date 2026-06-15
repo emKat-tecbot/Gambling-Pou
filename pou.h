@@ -23,6 +23,7 @@ class Pou{
         bool isDead(); // checks if pou is dead
         bool Won(); // checks if player won the game
         void setName(string newname){};
+        friend std::ostream& operator<<(std::ostream& os, const Pou& p);// to the lest of << cout(std ostream) so must be free function that can read private members
 };
 
 #endif //POU_H

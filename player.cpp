@@ -32,4 +32,9 @@ public:
     };
     int getMoney(){return(money);};
     string getId(){return(id);};
+    friend ostream& operator <<(ostream& os, const Player&p){
+        os << "Player: " << p.id
+        << "\n Money: $" << p.money;
+        return os;
+    };
 };

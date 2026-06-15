@@ -36,4 +36,12 @@ class Pou{
             return (stats.getHappy() >= 100 && stats.getHunger() <= 0 && stats.getEnergy() >= 100);
         };
         void setName(string newname){name = newname;};
+        friend ostream& operator<<(std::ostream& os, Pou& p) {
+            os << "Pou: "     << p.name
+            << " Happiness: " << p.stats.getHappy()
+            << " Hunger: "    << p.stats.getHunger()
+            << " Addiction: " << p.stats.getAddiction()
+            << " Mood: "      << p.stats.getMood();
+    return os;
+}
 };

@@ -15,6 +15,7 @@ class Player{
         void work();
         virtual void care_for_pou();
         void gamble();
+        friend ostream& operator <<(ostream& os, const Player&p); // to the lest of << cout(std ostream) so must be free function that can read private members
 };
 
 #endif //PLAYER_H
