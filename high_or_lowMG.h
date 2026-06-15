@@ -1,5 +1,6 @@
-#ifndef HIGH_OR_LOW_H
-#define HIGH_OR_LOW_H
+﻿#ifndef HIGH_OR_LOW_H
+#define HIGH_OR_LOW_
+
 #include "minigames.h"
 
 class High_or_Low : public Minigame{
@@ -10,6 +11,6 @@ class High_or_Low : public Minigame{
         High_or_Low();
         int play(int bet) override; 
         void Rules() override;
-        std::string getName(){return name;};
+        std::string getName(){return name;};;
 };
-#endif // HIGH_OR_LOW_H
+#endif // HIGH_OR_LOW_HHIGH_OR_LOW_H

@@ -14,7 +14,7 @@ class Stats {
 
     public:
         Stats();
-        void barrier(int value)const; // ensures that stats dont go over 100 or under 0
+        int barrier(int value)const; // ensures that stats dont go over 100 or under 0
         int getHappy();
         int getHunger();
         int getEnergy();
@@ -26,6 +26,7 @@ class Stats {
         void setEnergy(int energy);
         void setHygiene(int hygiene);
         void setAddiction(int addiction);  
+        void setMood();
 };
 
 #endif // STATS_H

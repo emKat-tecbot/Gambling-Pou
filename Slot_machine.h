@@ -11,6 +11,7 @@ private:
 
 public:
     Slot_Machine();
+    std::string spin();
     int play(int bet) override;
     void Rules() override;
     std::string getName(){};

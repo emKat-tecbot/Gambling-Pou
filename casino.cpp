@@ -1,4 +1,4 @@
-#include "Casino.h"
+﻿#include "casino.h"
 #include "Slot_Machine.h"
 #include "Pou.h"
 #include "high_or_lowMG.h"
