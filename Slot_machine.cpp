@@ -7,8 +7,8 @@
 #include <ctime>
 
 Slot_Machine::Slot_Machine()
-    : name("Slot Machine"),
-      symbols({"🜼","⟡","<3","✮","₍^. .^₎⟆"}) {
+    : Minigame("Slot Machine"),
+      symbols({"*","<>","<3","#","+_+"}) {
     srand(time(0));
 }
 
@@ -25,7 +25,7 @@ int Slot_Machine::play(int bet) {
     std::cout << "[ " << s1 << " | " << s2 << " | " << s3 << " ]\n";
 
     if (s1 == s2 && s2 == s3) {
-        if (s1 == "⟡") {
+        if (s1 == "<>") {
             std::cout << "JACKPOT!! You won $" << bet * 10 << "\n";
             return bet * 10;
         }

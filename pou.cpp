@@ -16,6 +16,7 @@ bool Pou::can_work(){
     return stats.getAddiction() < 80;
 }
 
+int Pou:: getAddiction(){return stats.getAddiction();}
 bool Pou::isDead(){
     return (stats.getHappy() == 0 ||
             stats.getHunger() == 100 ||

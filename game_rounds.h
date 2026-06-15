@@ -3,16 +3,14 @@
 #include "Pou.h"
 #include "player.h"
 #include "casino.h"
-#include "stats.h"
 #include <vector>
 #include <memory>
 
 class GameRound{
     private:
-        unique_ptr<Pou> pou;
-        unique_ptr<Player> player;
-        unique_ptr<Casino> casino;
-        unique_ptr<Stats> stats;
+        std::unique_ptr<Pou> pou;
+        std::unique_ptr<Player> player;
+        std::unique_ptr<Casino> casino;
         int turn;
     public:
         GameRound();

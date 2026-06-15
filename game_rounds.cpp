@@ -14,7 +14,7 @@ GameRound::GameRound() : turn(1) {
     std::cout << "Ok now what is your name? ";
     std::cin >> namePlayer;
 
-    pou    = std::make_unique<Pou>();
+    pou= std::make_unique<Pou>();
     pou->setName(namePou);
     player = std::make_unique<Player>(namePlayer, 500, pou.get());
     casino = std::make_unique<Casino>(pou.get());
@@ -70,7 +70,7 @@ void GameRound::start() {
         std::cout << "\n=== TURN " << turn << " ===\n";
         showStatus();
 
-        if (stats->getAddiction() >= 61) {
+        if (pou->getAddiction() >= 61) {
             std::cout << ">> Hey buddy were going to the casino tonight!\n"
                       << "1. Give in\n"
                       << "2. Resist\n";

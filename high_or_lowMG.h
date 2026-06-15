@@ -11,6 +11,6 @@ class High_or_Low : public Minigame{
         High_or_Low();
         int play(int bet) override; 
         void Rules() override;
-        std::string getName();
+        std::string getName(){return name;};;
 };
 #endif // HIGH_OR_LOW_H

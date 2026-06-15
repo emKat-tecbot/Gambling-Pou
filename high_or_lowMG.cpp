@@ -5,7 +5,7 @@
 #include <ctime>
 
 High_or_Low::High_or_Low()
-    : name("High or Low") {
+    : Minigame("High or Low") {
     srand(time(0));
     number = rand() % 100 + 1;
 }

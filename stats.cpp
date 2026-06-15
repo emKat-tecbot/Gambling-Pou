@@ -4,7 +4,7 @@
 
 Stats::Stats()
     : happy(50), hunger(50), energy(50),
-      hygiene(50), addiction(0), mood("HAPPY") {}
+      hygiene(50), addiction(15), mood("HAPPY") {}
 
 int Stats::barrier(int value)const{
     if (value < 0)   return 0;

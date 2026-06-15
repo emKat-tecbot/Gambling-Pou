@@ -18,6 +18,7 @@ class Pou{
         void update_hunger(int amount);
         void update_energy(int amount);
         void update_addiction(int amount);
+        int getAddiction();
         // getter
         string getName();
         // checkers (each round game checks if player lost or won)
