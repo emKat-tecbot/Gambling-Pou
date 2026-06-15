@@ -17,6 +17,7 @@ class Player{
         void gamble();
         int getMoney();
         string getId();
+        void setMoney(int newM);
         friend ostream& operator <<(ostream& os, const Player&p); // to the lest of << cout(std ostream) so must be free function that can read private members
 };
 

@@ -35,3 +35,5 @@ std::ostream& operator<<(std::ostream& os, const Player& p) {
        << " | Money: $" << p.money;
     return os;
 }
+
+void Player::setMoney(int newM){money += newM;};

@@ -1,37 +1,37 @@
-﻿#include "casino.h"
+﻿#include "Casino.h"
 #include "Slot_Machine.h"
-#include "Pou.h"
+#include "pou.h"
 #include "high_or_lowMG.h"
 #include "Pouxception.h"
 #include <iostream>
 
-class Casino {
-private:
-    std::vector<std::unique_ptr<Minigame>> games;
-    Pou* pou;
-public:
-    Casino(Pou* pou){// so that the casino actions point to main pou and affect his addiction
-        games.push_back(make_unique<Slot_Machine>()); //game 1
-        games.push_back(make_unique<High_or_Low>()); //game 2
-    };
-    void showGames() const{
-        for(int i = 0; i < (int)games.size();i++){
-            cout << "CASINO GAMES" << endl;
-            cout << i+1 << ". " << games[i]->getName()<< endl;
-        };
-    };
-    bool playGame(int index, int bet){
-        if(index < 0 || index > games.size())
-            throw Pouxception("Whoops! we dont have that one sorry\n");
+Casino::Casino(Pou* pou) : pou(pou) {
+    games.push_back(std::make_unique<Slot_Machine>());
+    games.push_back(std::make_unique<High_or_Low>());
+}
+
+void Casino::showGames() const {
+    std::cout << "=== CASINO GAMES ===\n";
+    for (int i = 0; i < (int)games.size(); i++) {
+        std::cout << i + 1 << ". " << games[i]->getName() << "\n";
+    }
+}
+
+int Casino::playGame(int index, int bet) {
+    if (index < 0 || index >= (int)games.size())
+        throw Pouxception("We dont have that game!");
+
+    pou->update_addiction(10);
+    int result = games[index]->play(bet);
+
+    if (result > 0) {
+        pou->update_happy(15);
         pou->update_addiction(10);
-        bool won = games[index]->play(bet);
-        if(won){
-            pou->update_happy(15);
-            pou->update_addiction(10);
-        }else{
-            pou->update_happy(-15);
-            pou->update_addiction(5);
-        };
-        return won;
-    };
-};
+        std::cout << "You won $" << result << "!\n";
+    } else {
+        pou->update_happy(-15);
+        pou->update_addiction(5);
+        std::cout << "You lost $" << result << "!\n";
+    }
+    return result;
+}

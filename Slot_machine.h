@@ -14,7 +14,7 @@ public:
     std::string spin();
     int play(int bet) override;
     void Rules() override;
-    std::string getName(){};
+    std::string getName();
 };
 
 #endif // SLOT_MACHINE_H
